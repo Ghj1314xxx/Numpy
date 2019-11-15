@@ -1,0 +1,59 @@
+    在科学技术的高速发展下，尤其是大数据以及机械学习等的发展导致对于数据的分析与计算变得尤为重要。大数据时代之下，谁能更好的掌握数据谁就能获得
+更好的资源与机会。
+    Numpy是一个基于python的包（package），被广泛的运用在数据分析和计算当中。由于Numpy的开源性，它十分适合作为数据分析的入门点。本文是本人在基
+于O'RELLY出版的《Numpy数据分析入门》（日文版）进行学习的同时的一些记录与分享。
+    首先适配环境使用的是Anaconda，具体工具是内藏的Jupyter Notebook。
+    Numpy的优点：1、开源，学习成本相对低廉。
+                 2、文法简单的高级编程语言。
+                 3、基于Python的学习，效率十分高。
+                 4、提供了大量函数，而且与其他的库（libraries）的统合性很高。
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+    Numpy有一个很特殊的点，就是被称为ndarray的多次元数组（配列）。ndarray的所有要素，相同的数据型占用的都是同样大小的内存。
+    一般情况下都将Numpy命名为np，当然根据个人习惯可以随意改变。
+        1）import numpy as np
+        2）x = np.array([[1,2,3],[4,5,6]])
+        3) type(x)  ------  <class 'numpy.ndarray'>
+        4) x.shape  ------  (2, 3)
+        5) x.size  ------  6 #全要素数
+        6) x.ndim  ------  2 #次元数
+        7) x.dtype  ------  int32 #要素的数据型
+        8) x.nbytes  ------  24 #大小为24bytes
+    在创建数组的时候可以直接定义数组的数据型。
+        #使用不同的数据类型错占用的内存是不一样的。当然其精确度也是不一样的。
+        9) x1 = np.array([[1,2,3],[4,5,6]], dtype = np.float)
+           x2 = np.array([[1,2,3],[4,5,6]], dtype = np.complex)
+           x3 = np.array([[1,2,3],[4,5,6]], dtype = np.uint32)
+           x4 = np.array([[1,2,3],[4,5,6]], dtype = np.int64)
+           x5 = np.array([[1,2,3],[4,5,6]], dtype = np.int32)
+           x6 = np.array([[1,2,3],[4,5,6]], dtype = np.int)
+           print(x1.nbytes)  ------  48
+           print(x2.nbytes)  ------  96
+           print(x3.nbytes)  ------  24
+           print(x4.nbytes)  ------  48
+           print(x5.nbytes)  ------  24
+           print(x6.nbytes)  ------  24
+           
+       10) x1  ------  array([[1., 2., 3.],[4., 5., 6.]])
+           x6  ------  array([[1, 2, 3],[4, 5, 6]])
+           
+       11) x1_copy = x1.astype(np.int)
+           x1  ------  array([[1, 2, 3],[4, 5, 6]]) #astype不会改变x1的类型，只是单纯的创造了一个新的x1_copy。
+          
+       12) Data_Cancer = np.random.rand(100000, 100)
+           print(type(Data_Cancer))  ------  <class 'numpy.ndarray'>
+           print(Data_Cancer.dtype)  ------  float64
+           print(Data_Cancer.nbytes)  ------  80000000
+           Data_Cancer_New = np.array(Data_Cancer, dtype=float32) 
+           print(Data_Cancer_New.nbytes)  ------  4000000
+    
+    dtype从80MB变成了40MB的同时，小数点后的精度也从16位变成了7位。因为在机械学习当中内存的占用情况十分重要，所以需要根据需求来定义大小。
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
