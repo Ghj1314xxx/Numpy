@@ -54,7 +54,7 @@
          plot(x, line, 'r-', x, y, 'o')
          show()
     
-             ![](./Numpy/Images/mat1.png)
+             ![](https://raw.githubusercontent.com/Ghj1314xxx/Numpy/master/Images/mat1.png)
     
     
     
