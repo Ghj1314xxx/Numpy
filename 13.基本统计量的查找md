@@ -86,4 +86,8 @@ Basic_Statistics
 得到结果的数组还是有些复杂难以将列与统计量相对应。
 
 ```python
+stat_labels = ['minm','maxm','rang','mean','medi','vari','10%t','90%t'] 
 
+print("       F1    F2    F3    F4    F5    F6    F7    F8    F9    F10    F11    F12    F13")
+for stat_labels, row in zip(stat_labels, Basic_Statistics):
+    print('%s [%s]'%(stat_labels, ''.join('%07s'%i for i in row)))
